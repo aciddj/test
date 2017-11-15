@@ -94,4 +94,8 @@ public class CommitController implements IModalWindow {
 	private void test1() {
 		// some code
 	}
+	
+	private void test2() {
+		// some more code
+	}
 }
