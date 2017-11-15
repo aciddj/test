@@ -90,4 +90,8 @@ public class CommitController implements IModalWindow {
             Dialogs.ErrorMessage("Unable to get SQL of current revision", e.getMessage());
         }
     }
+	
+	private void test1() {
+		// some code
+	}
 }
