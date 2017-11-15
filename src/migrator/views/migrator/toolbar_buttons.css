@@ -1,0 +1,7 @@
+.button{
+
+  -fx-border-radius: 0 0 0 0;
+  -fx-background-radius: 0 0 0 0;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
