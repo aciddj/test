@@ -143,4 +143,8 @@ public class PreferencesController implements IModalWindow {
         modalResult = true;
         close();
     }
+
+    private void test_funct1(){
+        stage.close();
+    }
 }
