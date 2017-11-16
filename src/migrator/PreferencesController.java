@@ -147,5 +147,6 @@ public class PreferencesController implements IModalWindow {
     private void test_func1(){
         stage.close();
 		resource.free();
+	addedPart.call();
     }
 }
