@@ -185,7 +185,7 @@ public class Revision {
         database.applyRevision(this);
     }
 
-    public boolean canBeApplied() {
+    public boolean canBeApplied123123123() {
         return !(isCurrent() || database.isApplied(this));
     }
 }
