@@ -160,4 +160,32 @@ public class Revision {
     public boolean canBeApplied() {
         return !(isCurrent() || database.isApplied(this));
     }
+
+	    public String getSQL() throws Exception {
+        String sql = "";
+        if (!current) {
+            Path scriptFile = Paths.get(getPath().toString(), scriptFileName);
+            byte[] encoded = Files.readAllBytes(scriptFile); // TODO : load file partially as a preview ?? optionally ??
+            return new String(encoded, StandardCharsets.UTF_8);
+        }
+
+        ArrayList<LogRecord> records = database.getLogRecords();
+        for (LogRecord record : records) {
+            sql += record.getSQL() + "\n\n";
+        }
+
+        return sql;
+    }
+
+    public void markAsApplied() throws Exception {
+        database.markRevisionAsApplied(this);
+    }
+
+    public void apply() throws Exception {
+        database.applyRevision(this);
+    }
+
+    public boolean canBeApplied() {
+        return !(isCurrent() || database.isApplied(this));
+    }
 }
